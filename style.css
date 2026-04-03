@@ -1,19 +1,86 @@
-.main_heading
-{
-    text-align: center;
-    background-color: blue;
-    color : yellow
-}
-.nav
-{
-    display: flex;
-    /* justify-content: center; */
-    gap: 20px;
-    margin-top: 20px;
-    font-size: 20px;
-    background-color: green;
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.main_heading {
+    text-align: center;
+    background-color: #1e3a8a; /* deep blue */
+    color: #facc15; /* yellow */
+    padding: 15px 0;
+}
+.main_heading h1 {
+    font-size: 3rem;   /* scalable size */
+    letter-spacing: 2px; /* spacing between letters */
+}
+/* Navbar */
+.nav {
+    display: flex;
+    justify-content: space-between; /* left + right separation */
+    align-items: center;
+    background-color: #15803d; /* green */
+    padding: 10px 20px;
+}
+
+/* Left side links */
+.nav-links {
+    display: flex;
+    gap: 15px; /* keeps them close but not stuck */
+}
+
+/* Navigation links */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #facc15; /* yellow on hover */
+}
+
+/* Right side buttons */
 .auth-buttons {
-  text-align: right;
+    display: flex;
+    gap: 10px;
+}
+
+/* Buttons base */
+.auth-buttons button {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Login button */
+.login-btn {
+    background-color: white;
+    color: #15803d;
+}
+
+.login-btn:hover {
+    background-color: #e5e7eb;
+}
+
+/* Register button */
+.register-btn {
+    background-color: #facc15;
+    color: black;
+}
+
+.register-btn:hover {
+    background-color: #eab308;
 }
