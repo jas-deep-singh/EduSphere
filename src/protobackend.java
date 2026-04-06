@@ -1,8 +1,11 @@
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
 
-public class protobackend {
+@WebServlet("/protobackend")   // 🔥 tells Tomcat when to call this
+public class protobackend extends HttpServlet {   // 🔥 MUST extend
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -24,12 +27,9 @@ public class protobackend {
         }
 
         out.println("<html><body>");
-
         out.println("<h2>Result</h2>");
-
         out.println("<input type='text' value='" + upper + "' readonly><br><br>");
         out.println("<input type='text' value='" + lower + "' readonly>");
-
         out.println("</body></html>");
     }
 }
