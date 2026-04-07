@@ -14,7 +14,9 @@ public class protobackend extends HttpServlet {   // 🔥 MUST extend
 
         String sic = request.getParameter("sic");
         String password = request.getParameter("password");
-
+        System.out.println("Servlet Hit!");
+        System.out.println("SIC: " + sic);
+        System.out.println("Password: " + password);
         String upper = "";
         String lower = "";
 
@@ -26,10 +28,6 @@ public class protobackend extends HttpServlet {   // 🔥 MUST extend
             lower = "cant do bro";
         }
 
-        out.println("<html><body>");
-        out.println("<h2>Result</h2>");
-        out.println("<input type='text' value='" + upper + "' readonly><br><br>");
-        out.println("<input type='text' value='" + lower + "' readonly>");
-        out.println("</body></html>");
+        out.print(upper + "," + lower);
     }
 }
