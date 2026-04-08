@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-GRAD</title>
-    <link rel="stylesheet" href="webapp\style.css">
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
@@ -28,7 +28,7 @@
 
     </div>
     <h2>LOGIN</h2>
-    <form action = "protobackend" method = "post">
+    <form onsubmit="sendData(event)">
         <table>
             <tr>
                 <td>SIC</td>
@@ -45,6 +45,30 @@
     <input type="text" id = "bigNameBox" readonly >
     <br>
     <input type="text" id = "smolNameBox" readonly >
+    
+    <script>
+function sendData(event) {
+    event.preventDefault(); // stop page reload
+
+    let sic = document.getElementsByName("sic")[0].value;
+    let password = document.getElementsByName("password")[0].value;
+
+    fetch("protobackend", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "sic=" + sic + "&password=" + password
+    })
+    .then(response => response.text())
+    .then(data => {
+        let parts = data.split(",");
+
+        document.getElementById("bigNameBox").value = parts[0];
+        document.getElementById("smolNameBox").value = parts[1];
+    });
+}
+</script>
     
 
 </body>
